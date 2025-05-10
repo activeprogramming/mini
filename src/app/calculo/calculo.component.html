@@ -1,0 +1,78 @@
+<div class="sheet-container">
+    <h1 class="sheet-title">Sistema Gaby</h1>
+    <table class="sheet">
+      <thead>
+        <tr>
+          <th>1</th><th>2</th><th>3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="dos">
+          <td><input type="number" [(ngModel)]="c2"/></td>
+          <td><input type="number" [(ngModel)]="d2"/></td>
+          <td><input type="number" [(ngModel)]="e2"/></td>
+        </tr>
+        <tr class="tres">
+          <td><input type="number" [(ngModel)]="c3"/></td>
+          <td><input type="number" [(ngModel)]="d3"/></td>
+          <td><input type="number" [(ngModel)]="e3"/></td>
+        </tr>
+        <tr class="cuatro">
+          <td readonly [ngClass]="c4Class">{{ c4 }}</td>
+          <td readonly [ngClass]="d4Class">{{ d4 }}</td>
+          <td readonly [ngClass]="e4Class">{{ e4 }}</td>
+        </tr>
+        <tr class="cinco">
+          <td></td>
+          <td readonly [ngClass]="d4Class">{{ masMenosLabel }}</td>
+  
+          <td></td>
+        </tr>
+        <tr class="siete">
+          <td><input type="number" [(ngModel)]="d6"/></td>
+          <td><input type="number" [(ngModel)]="d7"/></td>
+          <td></td>
+        </tr>
+        <tr class="ocho">
+           <td><input type="number" [(ngModel)]="c8"/></td>
+          <td readonly class="text-x">{{ d8 }}</td>
+          <td></td>
+        </tr>
+        <tr class="nueve">
+          <td></td>
+          <td readonly  class="text-x">{{ d9 }}</td>
+          <td></td>
+        </tr>
+        <tr class="diez">
+          <td readonly [ngClass]="c10Class" class="text-y">{{ c10 }}</td>
+          <td readonly class="text-z">{{ d10 }}</td>
+          <td></td>
+        </tr>
+        <tr class="once">
+          <td readonly 
+              [ngClass]="c11Class" 
+              class="text-h">{{ c11 }}</td>
+        
+          <td readonly 
+              [ngClass]="d11Class"  
+              class="text-i">{{ d11 }}</td>
+        
+          <td></td>
+        </tr>
+        
+        <tr class="doce">
+          <td readonly 
+              [ngClass]="c12Class" 
+              class="text-j">{{ c12 }}</td>
+        
+          <td readonly 
+              [ngClass]="d12Class"  
+              class="text-k">{{ d12 }}</td>
+        
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn-reset" (click)="resetear()">Resetear</button>
+  </div>
+  

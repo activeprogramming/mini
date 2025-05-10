@@ -1,0 +1,235 @@
+/* Contenedor principal */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFA500; /* tono naranja */
+  }
+  .sheet-title {
+    font-size: 1.5rem;          /* tamaño un poco más grande */
+    font-weight: 600;           /* negrita suave */
+    color: #264653;             /* color que armonice con tu paleta */
+    margin-bottom: 1rem;        /* espacio entre el título y la tabla */
+    text-align: center;         /* centrado sobre la tabla */
+    text-transform: uppercase;  /* opcional: mayúsculas */
+    letter-spacing: 1px;        /* opcional: separación de letras */
+  }
+  
+  
+  :host {
+    display: block;
+    height: 100vh;
+    background-color: #f1623e;
+  }
+  
+  .sheet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  
+    /* separa sólo desde arriba */
+    padding-top: 1rem; /* ajusta este valor */
+    
+    height: 100vh;
+    width: 100%;
+  }
+  
+  
+  
+  
+  
+  /* Tabla estilizada */
+  .sheet {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .sheet th,
+  .sheet td {
+    padding: 0.6rem 0.8rem;
+    text-align: center!important;
+    min-width: 80px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+  
+  /* Encabezados */
+  .sheet th {
+    background-color: #e68ac7;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  
+  /* Celdas de entrada */
+  .sheet input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 6px;
+    box-sizing: border-box;
+    text-align: center!important;
+    transition: border-color 0.2s;
+  }
+  .sheet input:focus {
+    outline: none;
+    border-color: #2a9d8f;
+    box-shadow: 0 0 4px rgba(42,157,143,0.4);
+  }
+  
+  /* Celdas readonly */
+  .sheet td[readonly] {
+    background-color: #ffffff;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* Alineación izquierda */
+  .sheet .text-left {
+    text-align: center!important;
+    padding-left: 8px;
+  }
+  
+  /* Colores de filas específicas (tonos suaves) */
+  .sheet tr.dos td input { background-color: #ffffff; }
+  .sheet tr.tres td input { background-color: #ffffff; }
+  .sheet tr.cuatro td     { background-color: #adffbf; }
+  .sheet tr.cinco .text-left { background-color: #f9f9f9; }
+  .sheet tr.siete td input  { background-color: #c3e8fa; }
+   .sheet tr.ocho td input  { background-color: #c3e8fa; }
+  .sheet tr.ocho td.text-x   { background-color: white }
+  .sheet tr.nueve td.text-x  { background-color: #ffffff; }
+  .sheet tr.diez td.text-y   { background-color: #b4ffbb;font-size: 140%; font-weight: 900; color: #000000!important; }
+  .sheet tr.diez td.text-z   { background-color: #ffffff; font-size: 140%; font-weight: 900; color: #000000!important;}
+  .sheet tr.once td.text-h   { background-color: #b4ffbb;font-size: 140%; font-weight: 900; color: #000000!important; }
+  .sheet tr.once td.text-i   { background-color: #e8fae8; font-size: 140%; font-weight: 900; color: #000000!important;}
+  .sheet tr.doce td.text-j   { background-color: #b4ffbb;font-size: 140%; font-weight: 900; color: #000000!important; }
+  .sheet tr.doce td.text-k   { background-color: #e5ffe8; font-size: 140%; font-weight: 900; color: #000000!important;}
+  
+  /* Botón centrado y con estilo */
+  .btn-reset {
+    background: linear-gradient(135deg, #532645 0%, #9d2a84 100%);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  
+  .btn-reset:hover {
+    background: linear-gradient(135deg, #eb53ee 0%, #ff3f78 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .btn-reset:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  
+  
+  /* ... reglas anteriores de .sheet td[readonly] ... */
+  
+  /* ahora tus clases vienen después y son más específicas */
+  /* primero tu regla genérica */
+  .sheet tr.cuatro td {
+    background-color: #adffbf;
+  }
+  
+  /* luego, **más específicas**, para cada caso */
+  .sheet tr.cuatro td.min {
+    background-color: #f87171; /* rojo mínimo */
+    color: #fff;
+  }
+  .sheet tr.cuatro td.mid {
+    background-color: #facc15; /* amarillo medio */
+    color: #333;
+  }
+  .sheet tr.cuatro td.max {
+    background-color: #4ade80; /* verde máximo */
+    color: #fff;
+  }
+  
+  
+  
+  
+  /* Dinámico: rojo para el mínimo */
+  .sheet tr.diez td.min,
+  .sheet tr.once td.min,
+  .sheet tr.doce td.min {
+    background-color: #f87171; /* rojo */
+    color: #fff;
+  }
+  
+  /* Dinámico: amarillo para el medio */
+  .sheet tr.diez td.mid,
+  .sheet tr.once td.mid,
+  .sheet tr.doce td.mid {
+    background-color: #facc15; /* amarillo */
+    color: #333;
+  }
+  
+  /* Dinámico: verde para el máximo */
+  .sheet tr.diez td.max,
+  .sheet tr.once td.max,
+  .sheet tr.doce td.max {
+    background-color: #4ade80; /* verde */
+    color: #fff;
+  }
+  
+  
+  .sheet td.min {
+    background-color: #f87171; /* rojo */
+    color: #fff;
+  }
+  .sheet td.mid {
+    background-color: #facc15; /* amarillo */
+    color: #333;
+  }
+  .sheet td.max {
+    background-color: #4ade80; /* verde */
+    color: #fff;
+  }
+  
+  
+  
+  /* MENOS */
+  .menos-red {
+    background-color: #f87171; /* rojo */
+    color: #fff;
+  }
+  .menos-yellow {
+    background-color: #facc15; /* amarillo */
+    color: #333;
+  }
+  .menos-green {
+    background-color: #4ade80; /* verde */
+    color: #fff;
+  }
+  
+  /* MAS */
+  .mas-red {
+    background-color: #f87171!important; /* rojo */
+    color: #720000!important; /* rojo oscuro */
+  }
+  .mas-yellow {
+    background-color: #facc15!important; /* amarillo */
+    color: #333!important; /* gris oscuro */
+  }
+  .mas-green {
+    background-color: #4ade80!important; /* verde */
+    color: #000000!important;
+  }
+  
