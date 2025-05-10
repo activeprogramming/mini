@@ -90,8 +90,15 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "branch": "gh-pages",
+            "dir": "dist/calcula/browser/",
+            "message": "Deploy desde Angular"
+          }
         }
-       
       }
     }
   }
